@@ -15,9 +15,15 @@ import { Input } from "@pages/components/ui/input"
 import { Textarea } from '@pages/components/ui/textarea'
 import ReCAPTCHA from "react-google-recaptcha";
 import { Instagram, Mail, Phone } from 'lucide-react'
+import { getDictionary } from '../../dictionaries'
 
+type Dictionary = Awaited<ReturnType<typeof getDictionary>>
 
-const Contact = ({ dict }: { dict: any }) => {
+interface ContactProps {
+  dict: Dictionary
+}
+
+const Contact = ({ dict }: ContactProps) => {
   const formSchema = z.object({
     name: z.string().min(2, { message: dict.portfolio.validname, }),
     email: z.string().email({ message: dict.portfolio.validemail, }),

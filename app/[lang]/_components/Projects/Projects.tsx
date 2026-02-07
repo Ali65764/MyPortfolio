@@ -22,7 +22,7 @@ const Projects = async ({ lang }: ProjectsProps) => {
       <div className='flex items-stretch lg:flex-row flex-col gap-5 mt-10 lg:mx-0 mx-2'>
         <Card className="relative mx-auto w-full max-w-sm pt-0 bg-white dark:bg-[#272730] dark:text-white border-[#33412f] dark:border-2 border-0 shadow-lg">
           <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
-          <img
+          <img loading='lazy'
             src="/product.png"
             alt="Event cover"
             className="relative z-20 aspect-video w-full object-cover rounded-t-xl"
@@ -44,7 +44,7 @@ const Projects = async ({ lang }: ProjectsProps) => {
         </Card>
         <Card className="relative mx-auto w-full max-w-sm pt-0 dark:bg-[#272730] bg-white dark:text-white border-[#33412f] dark:border-2 border-0 shadow-lg">
           <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
-          <img
+          <img loading='lazy'
             src="/movie.png"
             alt="Event cover"
             className="relative z-20 aspect-video w-full object-cover rounded-t-xl"
@@ -66,7 +66,7 @@ const Projects = async ({ lang }: ProjectsProps) => {
         </Card>
         <Card className="relative mx-auto w-full max-w-sm pt-0 dark:bg-[#272730] bg-white dark:text-white border-[#33412f] dark:border-2 border-0 shadow-lg">
           <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
-          <img
+          <img loading='lazy'
             src="/image.png"
             alt="Event cover"
             className="relative z-20 aspect-video w-full object-cover rounded-t-xl"

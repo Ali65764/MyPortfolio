@@ -1,6 +1,6 @@
 "use client"
 import { Button } from '@pages/components/ui/button'
-import { FileDown, Globe, Instagram,  Sun, Moon, Menu, User } from 'lucide-react'
+import { FileDown, Globe, Instagram, Sun, Moon, Menu, User } from 'lucide-react'
 import React from 'react'
 import {
   DropdownMenu,
@@ -18,12 +18,19 @@ import {
   SheetTrigger,
 } from "@pages/components/ui/sheet"
 import { FaGithub, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa'
+import { getDictionary } from '@pages/app/[lang]/dictionaries'
 
-const Header = ({ dict }: { dict: any }) => {
+type Dictionary = Awaited<ReturnType<typeof getDictionary>>
+
+interface HeaderProps {
+  dict: Dictionary
+}
+
+const Header = ({ dict }: HeaderProps) => {
 
   const socialLinks = [
     { href: "https://instagram.com/ali_mmdv85", icon: <Instagram size={18} /> },
-    { href: "https://www.linkedin.com/in/əli-məmmədli-25974931a", icon: <FaLinkedinIn  size={18} /> },
+    { href: "https://www.linkedin.com/in/əli-məmmədli-25974931a", icon: <FaLinkedinIn size={18} /> },
     { href: "https://github.com/Ali65764", icon: <FaGithub size={18} /> },
     { href: "https://wa.me/994506957141", icon: <FaWhatsapp size={20} /> }
   ]
@@ -47,7 +54,7 @@ const Header = ({ dict }: { dict: any }) => {
     <header className='container mx-auto'>
       <div className='flex md:justify-between items-center justify-center p-2'>
         <div className='md:flex hidden items-center text-[#8b8b8f] bg-white dark:bg-[#272730] p-2 rounded-md '>
-          <User size={18}/>  <span className='ml-2'>My Portfolio</span>
+          <User size={18} />  <span className='ml-2'>My Portfolio</span>
         </div>
         <div className='flex items-center space-x-2'>
           <Button className='bg-white dark:bg-[#272730] text-[#8b8b8f] dark:hover:bg-[#272730] hover:bg-white dark:border border-[#33412f]' asChild>
