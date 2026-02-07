@@ -3,23 +3,21 @@ import {
     Sheet,
     SheetClose,
     SheetContent,
-    SheetDescription,
-    SheetFooter,
-    SheetHeader,
     SheetTitle,
     SheetTrigger,
 } from "@pages/components/ui/sheet"
-import { Github, Instagram, Linkedin, Menu } from 'lucide-react'
+import { Github, Instagram, Linkedin, Menu, MessageCircle } from 'lucide-react'
 import { navigationLinks } from '@pages/constants'
 import Link from 'next/link'
 
 const MobileMenu = () => {
     const socialLinks = [
         { href: "https://instagram.com/ali_mmdv85", icon: <Instagram size={25} /> },
-        { href: "https://linkedin.com/", icon: <Linkedin size={25} /> },
-        { href: "https://github.com/Ali65764", icon: <Github size={25} /> }
+        { href: "https://www.linkedin.com/in/əli-məmmədli-25974931a?utm_source=share_via&utm_content=profile&utm_medium=member_android", icon: <Linkedin size={25} /> },
+        { href: "https://github.com/Ali65764", icon: <Github size={25} /> },
+        {href:"https://wa.me/994506957141",icon:<MessageCircle size={25}/>}
     ]
-    
+
     return (
         <Sheet>
             <SheetTrigger>
@@ -40,7 +38,7 @@ const MobileMenu = () => {
                         </SheetClose>
                     ))}
                 </div>
-                <div className='flex items-center justify-center mt-8 space-x-6'>
+                <div className='flex items-center justify-center mt-8 space-x-5'>
                     {socialLinks.map((link, index) => (
                         <SheetClose asChild key={index}>
                             <Link href={link.href}>

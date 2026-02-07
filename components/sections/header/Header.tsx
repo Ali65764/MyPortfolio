@@ -1,5 +1,5 @@
 import { Button } from '@pages/components/ui/button'
-import { FileDown, Github, Globe, Instagram, Linkedin, Sun } from 'lucide-react'
+import { FileDown, Github, Globe, Instagram, Linkedin, MessageCircle, Sun } from 'lucide-react'
 import React from 'react'
 import {
   DropdownMenu,
@@ -13,17 +13,22 @@ import MobileMenu from './MobileMenu'
 const Header = () => {
   const socialLinks = [
     { href: "https://instagram.com/ali_mmdv85", icon: <Instagram size={18} /> },
-    { href: "https://linkedin.com/", icon: <Linkedin size={18} /> },
-    { href: "https://github.com/Ali65764", icon: <Github size={18} /> }
+    { href: "https://www.linkedin.com/in/əli-məmmədli-25974931a?utm_source=share_via&utm_content=profile&utm_medium=member_android", icon: <Linkedin size={18} /> },
+    { href: "https://github.com/Ali65764", icon: <Github size={18} /> },
+    { href: "https://wa.me/994506957141", icon: <MessageCircle size={18} /> }
   ]
   return (
-    <header className='container mx-auto bg-[#1c1d22]'>
+    <header className='container mx-auto'>
       <div className='flex md:justify-between items-center justify-center p-2'>
         <div className='md:flex hidden text-white bg-[#272730] p-2 rounded-lg text-sm'>
           Mammadli Ali
         </div>
         <div className='flex items-center space-x-2'>
-          <Button className='bg-[#272730] text-[#8b8b8f] hover:bg-[#272730] border border-[#33412f]'><FileDown />Download CV</Button>
+          <Button className='bg-[#272730] text-[#8b8b8f] hover:bg-[#272730] border border-[#33412f]' asChild>
+            <a href="/cv.pdf" download="cv.pdf" >
+              <FileDown /><span>Download CV</span>
+            </a>
+          </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button className='bg-[#272730] border border-[#33412f] text-[#8b8b8f] hover:bg-[#272730] hover:text-[#8b8b8f]  flex items-center' variant="outline">
