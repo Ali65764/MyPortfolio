@@ -27,7 +27,7 @@ interface HeaderProps {
 }
 
 const Header = ({ dict }: HeaderProps) => {
-
+  const [open, setOpen] = React.useState(false)
   const socialLinks = [
     { href: "https://instagram.com/ali_mmdv85", icon: <Instagram size={18} /> },
     { href: "https://www.linkedin.com/in/əli-məmmədli-25974931a", icon: <FaLinkedinIn size={18} /> },
@@ -48,8 +48,19 @@ const Header = ({ dict }: HeaderProps) => {
     { href: "#contact", label: dict.portfolio.contact }
   ]
 
+
+
   const { theme, toggleTheme } = useTheme();
 
+  const handleNavClick = (href: string) => {
+    setOpen(false)
+    setTimeout(() => {
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 300)
+  }
   return (
     <header className='container mx-auto'>
       <div className='flex md:justify-between items-center justify-center p-2'>
@@ -108,15 +119,19 @@ const Header = ({ dict }: HeaderProps) => {
                 <SheetTitle className='text-xl dark:text-white text-center mt-3'>
                   <code className='text-green-600 dark:text-[#a2f552]'>&lt;p&gt;</code> Ali Mammadli <code className='text-green-600 dark:text-[#a2f552]'>&lt;/p&gt;</code>
                 </SheetTitle>
-                <div className='flex flex-col space-y-3 mt-6 text-xl'>
+                <nav className='flex flex-col space-y-3 mt-6 text-xl'>
                   {navigationLinks.map((link, index) => (
                     <SheetClose asChild key={index}>
-                      <Link href={link.href} className='block text-center'>
+                      <button
+                        key={index}
+                        onClick={() => handleNavClick(link.href)}
+                        className='block text-center'
+                      >
                         {link.label}
-                      </Link>
+                      </button>
                     </SheetClose>
                   ))}
-                </div>
+                </nav>
                 <div className='flex items-center justify-center mt-8 space-x-5'>
                   {socialLinks.map((link, index) => (
                     <SheetClose asChild key={index}>
