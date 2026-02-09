@@ -1,8 +1,13 @@
 "use client"
 import React from 'react'
+import { getDictionary } from '../../dictionaries'
+type Dictionary = Awaited<ReturnType<typeof getDictionary>>
 
+interface SkillsProps {
+    dict: Dictionary
+}
 
-const Skills = ({dict}) => {
+const Skills = ({ dict }: SkillsProps) => {
     return (
         <div className='container mx-auto select-none' id="skills">
             <div className='bg-white dark:bg-[#272730] rounded-md mx-2 border-[#33412f] dark:border p-10'>

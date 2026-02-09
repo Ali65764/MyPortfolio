@@ -3,20 +3,24 @@ import React from 'react'
 import Marquee from 'react-fast-marquee'
 import { getDictionary } from '../../dictionaries'
 
-const About = async ({ lang }) => {
+interface AboutProps {
+    lang: "en" | "az" | "ru"
+}
+
+const About = async ({ lang }: AboutProps) => {
     const dict = await getDictionary(lang)
     const logos = [
-        "/React.png",
-        "/Next.png",
-        "/Js.png",
-        "/Tailwind.png"
+        { src: "/React.png", alt: "React logo" },
+        { src: "/Next.png", alt: "Next.js logo" },
+        { src: "/Js.png", alt: "JavaScript logo" },
+        { src: "/Tailwind.png", alt: "Tailwind CSS logo" }
     ]
     return (
         <main className='container mx-auto select-none' id="about">
             <div className='bg-[#ffffff] dark:bg-[#272730] rounded-md mx-2 border-[#33412f] dark:border '>
                 <div className='flex items-center lg:flex-row flex-col'>
                     <div className='text-center md:text-left md:px-20 md:py-16 p-8'>
-                        <Image width={500} height={100} src="/me3.jpg" alt='me' className='md:h-[500px] h-[280px] sm:h-[480px] rounded-[20px] object-cover' />
+                        <Image width={400} height={100} src="/me3.jpg" alt='me' className='w-auto md:h-[500px] h-[280px] sm:h-[480px] rounded-[20px] object-cover' />
                     </div>
                     <div className='lg:w-1/2  w-full dark:text-white text-center lg:text-left mt-4 md:mt-0'>
                         <p className='text-xl'><code className='text-green-600 dark:text-[#a2f552]'>&lt;div&gt;</code>{dict.portfolio.header}<code className='text-green-600 dark:text-[#a2f552]'> &lt;/div&gt;</code></p>
@@ -31,7 +35,7 @@ const About = async ({ lang }) => {
                             <Marquee speed={50}>
                                 {logos.map((logo, index) => (
                                     <div key={index} className='mx-5 flex items-center justify-center border-2 border-[#33412f] p-2'>
-                                        <Image width={50} height={50} src={logo} alt={`Logo ${index + 1}`}
+                                        <Image width={50} height={50} src={logo.src} alt={logo.alt}
                                             className=' object-contain' />
                                     </div>
                                 ))}

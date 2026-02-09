@@ -2,9 +2,14 @@
 import React from 'react'
 import CountUp from 'react-countup'
 import { useInView } from 'react-intersection-observer'
+import { getDictionary } from '../../dictionaries'
+type Dictionary = Awaited<ReturnType<typeof getDictionary>>
 
+interface CountProps {
+    dict: Dictionary
+}
 
-const Count = ({ dict }) => {
+const Count = ({ dict }: CountProps) => {
     const stats = [
         { label: dict.portfolio.years, end: 2, suffix: "+" },
         { label: dict.portfolio.github, end: 15, suffix: "+" },

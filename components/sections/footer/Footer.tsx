@@ -39,7 +39,7 @@ const Footer = async ({ lang }: FooterProps) => {
         </div>
         <div className='flex items-center dark:text-[#9ca3af] text-sm space-x-6 justify-center'>
           {navigationLinks.map((link, index) => (
-            <Link href={link.href} key={index}>{link.label}</Link>
+            <Link href={link.href} key={index} target='_blank'>{link.label}</Link>
           ))}
         </div>
       </div>

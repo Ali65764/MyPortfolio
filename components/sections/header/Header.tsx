@@ -16,6 +16,7 @@ import {
   SheetContent,
   SheetTitle,
   SheetTrigger,
+  SheetDescription
 } from "@pages/components/ui/sheet"
 import { FaGithub, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa'
 import { getDictionary } from '@pages/app/[lang]/dictionaries'
@@ -104,7 +105,7 @@ const Header = ({ dict }: HeaderProps) => {
         <div className='flex items-center space-x-4 text-white'>
           <div className='md:flex hidden items-center space-x-4 dark:text-white text-black'>
             {socialLinks.map((link, index) => (
-              <Link href={link.href} key={index}>{link.icon}</Link>
+              <Link href={link.href} key={index} target='_blank'>{link.icon}</Link>
             ))}
           </div>
           <div className='flex items-center md:bg-gray-200 dark:md:bg-[#32323b] px-5 py-[25.2px] md:space-x-0 space-x-5'>
@@ -117,8 +118,9 @@ const Header = ({ dict }: HeaderProps) => {
               </SheetTrigger>
               <SheetContent className='bg-white dark:bg-[#272730] border-0 dark:text-white'>
                 <SheetTitle className='text-xl dark:text-white text-center mt-3'>
-                  <code className='text-green-600 dark:text-[#a2f552]'>&lt;p&gt;</code> Ali Mammadli <code className='text-green-600 dark:text-[#a2f552]'>&lt;/p&gt;</code>
+                  <code className='text-green-600 dark:text-[#a2f552]'>&lt;p&gt;</code> {dict.portfolio.name} <code className='text-green-600 dark:text-[#a2f552]'>&lt;/p&gt;</code>
                 </SheetTitle>
+                <SheetDescription></SheetDescription>
                 <nav className='flex flex-col space-y-3 mt-6 text-xl'>
                   {navigationLinks.map((link, index) => (
                     <SheetClose asChild key={index}>
@@ -135,7 +137,7 @@ const Header = ({ dict }: HeaderProps) => {
                 <div className='flex items-center justify-center mt-8 space-x-5'>
                   {socialLinks.map((link, index) => (
                     <SheetClose asChild key={index}>
-                      <Link href={link.href}>
+                      <Link href={link.href} target='_blank'>
                         {link.icon}
                       </Link>
                     </SheetClose>
