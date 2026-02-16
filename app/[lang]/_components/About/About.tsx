@@ -20,7 +20,16 @@ const About = async ({ lang }: AboutProps) => {
             <div className='bg-[#ffffff] dark:bg-[#272730] rounded-md mx-2 border-[#33412f] dark:border '>
                 <div className='flex items-center lg:flex-row flex-col'>
                     <div className='text-center md:text-left md:px-20 md:py-16 p-8'>
-                        <Image width={400} height={100} src="/me3.jpg" alt='me' className='w-auto md:h-[500px] h-[280px] sm:h-[480px] rounded-[20px] object-cover' />
+                        <Image
+                            width={1200}
+                            height={1600}
+                            src="/me3.jpg"
+                            alt='me'
+                            className='w-auto md:h-[500px] h-[280px] sm:h-[480px] rounded-[20px] object-cover'
+                            priority
+                            fetchPriority="high"
+                            sizes="(max-width: 640px) 280px, (max-width: 768px) 480px, 500px"
+                        />
                     </div>
                     <div className='lg:w-1/2  w-full dark:text-white text-center lg:text-left mt-4 md:mt-0'>
                         <p className='text-xl'><code className='text-green-600 dark:text-[#a2f552]'>&lt;div&gt;</code>{dict.portfolio.header}<code className='text-green-600 dark:text-[#a2f552]'> &lt;/div&gt;</code></p>

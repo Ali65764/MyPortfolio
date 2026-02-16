@@ -34,12 +34,12 @@ const Footer = async ({ lang }: FooterProps) => {
         </p>
         <div className='flex items-center space-x-5 dark:text-[#f0f1ef] justify-center'>
           {socialLinks.map((link, index) => (
-            <Link href={link.href} key={index}>{link.icon}</Link>
+            <Link href={link.href} key={index} target='_blank'>{link.icon}</Link>
           ))}
         </div>
         <div className='flex items-center dark:text-[#9ca3af] text-sm space-x-6 justify-center'>
           {navigationLinks.map((link, index) => (
-            <Link href={link.href} key={index} target='_blank'>{link.label}</Link>
+            <Link href={link.href} key={index}>{link.label}</Link>
           ))}
         </div>
       </div>
