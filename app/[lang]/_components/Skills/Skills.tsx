@@ -57,7 +57,7 @@ const Skills = ({ dict }: SkillsProps) => {
                             </li>
                             <li className='dark:text-gray-500'>
                                 <span className='dark:text-white font-semibold'>{dict.portfolio.others}: </span>
-                                <span className='[word-spacing:4px]'>FireBase , GIT/GITHUB , Prisma , Clerk</span>
+                                <span className='[word-spacing:4px]'>GIT/GITHUB , Node.js, Express.js, MongoDB</span>
                             </li>
                         </ul>
                     </div>
