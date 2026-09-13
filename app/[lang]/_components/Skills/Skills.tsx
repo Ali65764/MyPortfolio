@@ -35,13 +35,13 @@ const Skills = ({ dict }: SkillsProps) => {
                         <div>
                             <p className='dark:text-white mb-2'>React.js</p>
                             <div className='w-full bg-gray-700 rounded-full h-2'>
-                                <div className='bg-green-500 h-2 rounded-full' style={{ width: '83%' }}></div>
+                                <div className='bg-green-500 h-2 rounded-full' style={{ width: '85%' }}></div>
                             </div>
                         </div>
                         <div>
-                            <p className='dark:text-white mb-2'>Next.js</p>
+                            <p className='dark:text-white mb-2'>Express.js</p>
                             <div className='w-full bg-gray-700 rounded-full h-2'>
-                                <div className='bg-green-500 h-2 rounded-full' style={{ width: '82%' }}></div>
+                                <div className='bg-green-500 h-2 rounded-full' style={{ width: '72%' }}></div>
                             </div>
                         </div>
                     </div>
@@ -52,12 +52,16 @@ const Skills = ({ dict }: SkillsProps) => {
                                 <span className='[word-spacing:4px]'>HTML , CSS ,  JavaScript , TypeScript , React.js , Next.js</span>
                             </li>
                             <li className='dark:text-gray-500'>
+                                <span className='dark:text-white font-semibold'>Back-End & Database: </span>
+                                <span className='[word-spacing:4px]'>Node.js, Express.js, MongoDB</span>
+                            </li>
+                            <li className='dark:text-gray-500'>
                                 <span className='dark:text-white font-semibold'>{dict.portfolio.styling}: </span>
                                 <span className='[word-spacing:4px]'> TailwindCSS , Bootstrap , ShadCn , MUI</span>
                             </li>
                             <li className='dark:text-gray-500'>
                                 <span className='dark:text-white font-semibold'>{dict.portfolio.others}: </span>
-                                <span className='[word-spacing:4px]'>GIT/GITHUB , Node.js, Express.js, MongoDB</span>
+                                <span className='[word-spacing:4px]'>GIT/GITHUB</span>
                             </li>
                         </ul>
                     </div>

@@ -24,8 +24,8 @@ const Projects = async ({ lang }: ProjectsProps) => {
         <Card className="relative mx-auto w-full max-w-sm pt-0 bg-white dark:bg-[#272730] dark:text-white border-[#33412f] dark:border-2 border-0 shadow-lg">
           <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
           <Image width={300} height={400}
-            src="/product.png"
-            alt="Event cover"
+            src="/vela.png"
+            alt="vela"
             className="relative z-20 aspect-video w-full object-cover rounded-t-xl"
           />
           <CardHeader>
@@ -37,9 +37,9 @@ const Projects = async ({ lang }: ProjectsProps) => {
             </CardDescription>
           </CardHeader>
           <CardFooter className='flex justify-between mt-4'>
-            <Link href="https://product-reducer.vercel.app" className="w-full flex items-center gap-1 hover:text-[#a2f549] transition duration-500">
+            <Link href="https://clothing-ecommerce-app-fz3x.vercel.app" className="w-full flex items-center gap-1 hover:text-[#a2f549] transition duration-500">
               <Eye />{dict.portfolio.live}</Link>
-            <Link href='https://github.com/Ali65764/ProductReducer' className='w-full flex items-center gap-1 hover:text-[#a2f549] transition duration-500'>
+            <Link href='https://github.com/Ali65764/clothing-ecommerce-app' className='w-full flex items-center gap-1 hover:text-[#a2f549] transition duration-500'>
               <Github />{dict.portfolio.view}</Link>
           </CardFooter>
         </Card>
